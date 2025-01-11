@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Kerala - Labour Issues</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Safe Kerala: Labour Issues Management</h1>
+    
+    <div class="form-section">
+      <h2>Add Labour Issue</h2>
+      <form id="labourIssueForm">
+        <label for="labourName">Labour Name:</label>
+        <input type="text" id="labourName" placeholder="Enter labourer's name" required>
+        
+        <label for="issueType">Issue Type:</label>
+        <select id="issueType" required>
+          <option value="" disabled selected>Select issue type</option>
+          <option value="Health">Health</option>
+          <option value="Wages">Wages</option>
+          <option value="Workplace Safety">Workplace Safety</option>
+          <option value="Other">Other</option>
+        </select>
+        
+        <label for="issueDescription">Description:</label>
+        <textarea id="issueDescription" placeholder="Describe the issue" rows="4" required></textarea>
+        
+        <button type="submit">Add Issue</button>
+      </form>
+    </div>
+    
+    <div class="issues-section">
+      <h2>Manage Issues</h2>
+      <ul id="labourIssuesList">
+      </ul>
+    </div>
+  </div>
+</body>
+</html> 

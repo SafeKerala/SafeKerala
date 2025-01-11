@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaints - Safe Kerala</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>View Complaints</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Complaint ID</th>
+                    <th>User Name</th>
+                    <th>Complaint</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample Data Row -->
+                <tr>
+                    <td>101</td>
+                    <td>John Doe</td>
+                    <td>Streetlights not working in XYZ area.</td>
+                    <td>2024-12-15</td>
+                    <td>Pending</td>
+                    <td class="action-buttons">
+                        <a href="viewdetails.html?complaint_id=101" class="view-btn">View</a>
+                        <a href="replycomplaint.html?complaint_id=101" class="reply-btn">reply</a>
+                    </td>
+                </tr>
+                <!-- Repeat rows dynamically using backend integration -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Complaints and View Replies - Safe Kerala</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS for styling -->
+</head>
+<body>
+    <header>
+        <h1>Safe Kerala - Send Complaints & View Replies</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="addcomplaint.html">Add Complaint</a></li>
+                <li><a href="complaints.html">View Complaints</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="complaint-form">
+            <h2>Submit a New Complaint</h2>
+            <form action="submit_complaint.php" method="POST">
+                <!-- User details section -->
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full_name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone">
+
+                <!-- Complaint details section -->
+                <label for="complaint-type">Complaint Type:</label>
+                <select id="complaint-type" name="complaint_type" required>
+                    <option value="crime">Crime</option>
+                    <option value="accident">Accident</option>
+                    <option value="harassment">Harassment</option>
+                    <option value="corruption">Corruption</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="complaint-description">Complaint Description:</label>
+                <textarea id="complaint-description" name="complaint_description" rows="5" required></textarea>
+
+                <!-- Optional fields -->
+                <label for="location">Location of Incident:</label>
+                <input type="text" id="location" name="location">
+
+                <label for="date">Date of Incident:</label>
+                <input type="date" id="date" name="date">
+
+                <!-- Submit button -->
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </section>
+
+        <section class="view-reply">
+            <h2>View Replies to Your Complaints</h2>
+
+            <form >
+                <label for="complaint-id">Enter Complaint ID to View Reply:</label>
+                <input type="text" id="complaint-id" name="complaint_id" required>
+
+                <button type="submit">View Reply</button>
+            </form>
+
+            <div class="reply-section">
+                <h3>Complaint Reply:</h3>
+                <div id="reply-message">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
