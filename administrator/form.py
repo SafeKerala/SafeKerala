@@ -8,8 +8,8 @@ class Logintableform(ModelForm):
         fields=['username','password','usertype']
 class policestationform(ModelForm):
     class Meta:
-        Model=Policestation
-        fields=['LOGIN_ID','policestationname','phonenumber','location','email']
+        model=Policestation
+        fields=['policestationname','phonenumber','location','email']
 class userform(ModelForm):
     class Meta:
         Model=user
@@ -21,11 +21,11 @@ class complaintsform(ModelForm):
 class viewfeedbackform(ModelForm):
     class Meta:
         Model=viewfeedback
-        fields=['userid','feedback']
+        fields=['userid','username','feedback','date']
 class notificationform(ModelForm):
     class Meta:
         Model=notification
-        fields=['LOGIN_ID','notification'] 
+        fields=['LOGIN_ID','username','notification','date'] 
 class labourprofileform(ModelForm):
     class Meta:
         Model=labourprofile
@@ -33,12 +33,19 @@ class labourprofileform(ModelForm):
 class criminallistmanagementform(ModelForm):
     class Meta:
         Model=criminallistmanagement
-        fields=['criminalname','criminalcase']
+        fields=['criminalname','criminalcase','location','status']
 class requesttableform(ModelForm):
     class Meta:
         Model=requesttable
-        fields=['Userid','Labourid','Requeststatus','Requestdate']
-
+        fields=['LOGIN_ID','Labourid','Requeststatus','Requestdate']
+class viewpolicestationform(ModelForm):
+    class Meta:
+        Model=viewpolicestation
+        fields=['stationid','stationname','location','contact','email']
+class viewworkrequestform(ModelForm):
+    class Meta:
+        Model=viewworkrequest
+        fields=['LOGIN_ID','Phoneno','Description','Priority','Status']
 
 
                

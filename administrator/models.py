@@ -22,10 +22,14 @@ class complaints(models.Model):
     complaintdate=models.DateField(max_length=100,null=True,blank=True)
 class viewfeedback(models.Model):
     userid=models.ForeignKey(user,on_delete=models.CASCADE,null=True,blank=True)
+    username=models.CharField(max_length=100,null=True,blank=True)
     feedback=models.CharField(max_length=100,null=True,blank=True)
+    date=models.DateField(max_length=100,null=True,blank=True)
 class notification(models.Model):
     LOGIN_ID=models.ForeignKey(Logintable, on_delete=models.CASCADE,null=True,blank=True)
+    username=models.CharField(max_length=100,null=True,blank=True)
     notification=models.CharField(max_length=100,null=True,blank=True)
+    date=models.DateField(max_length=100,null=True,blank=True)
 class labourprofile(models.Model):
     LOGIN_ID=models.ForeignKey(Logintable, on_delete=models.CASCADE,null=True,blank=True)
     skills=models.CharField(max_length=100,null=True,blank=True)
@@ -34,11 +38,30 @@ class labourprofile(models.Model):
 class criminallistmanagement(models.Model):
     criminalname=models.CharField(max_length=100,null=True,blank=True)
     criminalcase=models.CharField(max_length=100,null=True,blank=True)
+    location=models.CharField(max_length=100,null=True,blank=True)
+    status=models.CharField(max_length=100,null=True,blank=True)
 class requesttable(models.Model):
     Userid=models.ForeignKey(user, on_delete=models.CASCADE,null=True,blank=True)
     Labourid=models.ForeignKey(labourprofile, on_delete=models.CASCADE,null=True,blank=True)
     Requeststatus=models.CharField(max_length=100,null=True,blank=True)
     Requestdate=models.DateField(max_length=100,null=True,blank=True)
+class viewpolicestation(models.Model):
+    stationid=models.ForeignKey(user, on_delete=models.CASCADE,null=True,blank=True)
+    stationname=models.CharField(max_length=100,null=True,blank=True)
+    location=models.CharField(max_length=100,null=True,blank=True)
+    contact=models.BigIntegerField(null=True,blank=True)
+    email=models.CharField(max_length=100,null=True,blank=True)
+class viewworkrequest(models.Model):
+    Userid=models.ForeignKey(user, on_delete=models.CASCADE,null=True,blank=True)
+    Phoneno=models.BigIntegerField(null=True,blank=True)
+    Description=models.CharField(max_length=100,null=True,blank=True)
+    Priority=models.CharField(max_length=100,null=True,blank=True)
+    Status=models.CharField(max_length=100,null=True,blank=True)
+
+
+
+
+
 
     
 

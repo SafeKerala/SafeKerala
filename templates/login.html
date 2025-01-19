@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="process_login.php" method="POST">
+    <form action="" method="POST">
+        
+        {% csrf_token %}
         <div class="vaish">
          <div class="cd">  
             <label for="username">Username:</label>

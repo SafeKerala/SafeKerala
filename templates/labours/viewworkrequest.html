@@ -1,6 +1,6 @@
 
 
-<!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,8 @@
         <section class="work-request-table">
             <h2>Pending Work Requests</h2>
             <table>
-                <thead>
+                <tbody>
+                    {%for i in n%}
                     <tr>
                         <th>user ID</th>
                         <th>phone no</th>
@@ -36,25 +37,26 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{i.userid}}</td>
+                        <td>{{i.Phoneno}}</td>
+                        <td>{{i.Description}}</td>
+                        <td>{{i.Priority}}</td>
+                        <td>{{i.Status}}</td>
                         <td>
                             <button class="edit-btn" onclick="editLabour(1)">Accept</button>
                             <button class="delete-btn" onclick="deleteLabour(1)">Delete</button>
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{i.userid}}</td>
+                        <td>{{i.Phoneno}}</td>
+                        <td>{{i.Description}}</td>
+                        <td>{{i.Priority}}</td>
+                        <td>{{i.Status}}</td>
                         <td>
                            
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </section>

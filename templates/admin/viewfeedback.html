@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,31 +16,33 @@
     <table>
         <thead>
             <tr>
-                <th>
-            ID</th>
-                <th>Name</th>
-                <th>Feedback</th>
+    
+            <th>id</th>
+            <th>username</th>   
+                <th>feedback</th>
                 <th>Date</th>
             </tr>
         </thead>
         <tbody>
+            {%for i in f%}
             <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>Great project! Helped improve safety measures in my area.</td>
-                <td>2024-12-01</td>
+                
+                <td>{{i.id}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.feedback}}</td>
+                <td>{{i.date}}</td>
                 
             </tr>
             <tr>
-                <td>2</td>
-                <td>Mary Smith</td>
-                <td>The initiative is good, but more workshops are needed.</td>
-                <td>2024-12-10</td>
+                <td>{{i.id}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.feedback}}</td>
+                <td>{{i.date}}</td>
                 
                    
                
             </tr>
-            <!-- Dynamic rows will be inserted here -->
+            {% endfor %}
         </tbody>
     </table>
 </body>

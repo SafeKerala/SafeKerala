@@ -3,11 +3,13 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('login',login.as_view(),name='login'),
+    path('',login.as_view(),name='login'),
+    path('addpolicestation',addpolicestation.as_view(),name='addpolicestation'),
+    path('editpolicestation',editpolicestation.as_view(),name='editpolicestation'),
     path('admindashboard',admindashboard.as_view(),name='admindashboard'),
     path('viewcomplaints',viewcomplaints.as_view(),name='viewcomplaints'),
     path('viewlabours',viewlabours.as_view(),name='viewlabours'),
-    path('viewpolicestation',viewpolicestation.as_view(),name='viewpolicestation'),
+    path('policestation',policestation.as_view(),name='policestation'),
     path('sendnotification',sendnotification.as_view(),name='sendnotification'),
     path('viewfeedback',viewfeedback.as_view(),name='viewfeedback'),
     path('replycomplaint',replycomplaint.as_view(),name='replycomplaint'),
@@ -17,6 +19,7 @@ urlpatterns = [
     path('criminallistmanagement',criminallistmanagement.as_view(),name='criminallistmanagement'),
     path('editcriminals',editcriminals.as_view(),name='editcriminals'),
     path('editlabours',editlabours.as_view(),name='editlabours'),
+    path('addlabours',editlabours.as_view(),name='addlabours'),
     path('viewnotification',viewnotification.as_view(),name='viewnotification'),
     path('sendsolution',sendsolution.as_view(),name='sendsolution'),
     path('userdashboard',userdashboard.as_view(),name='userdashboard'),

@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ADD POLICESTATION</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <h1>ADD POLICESTATION</h1>
+    <div class="vaish">
+        <div class="cd">
     <form action="" method="post">
-        <label for="">stationId</label>
-        <input type="text" name="stationId">
-        <br><br>
+        {% csrf_token %}
         <label for="">Station Name</label>
         <input type="text" name="policestationname">
         <br><br>
@@ -17,10 +19,14 @@
         <input type="text" name="location" id="">
         <br><br>
         <label for="">Contact</label>
-        <input type="text" name="contact" id="">
+        <input type="text" name="phonenumber" id="">
         <br><br>
         <label for="">email</label>
-        <input type="text" name="email" id="">
+        <input type="email" name="email" id=""><br>
+        <label for="">username</label>
+        <input type="text" name="username" id=""><br><br>
+        <label for="">password</label>
+        <input type="text" name="password" id=""><br>
         <button type="submit">submit</button>
     </form>
     

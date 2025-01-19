@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Labours - Safe Kerala Project</title>
+    <title>View Labours</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,7 +71,7 @@
 <body>
     <!-- Header Section -->
     <div class="header">
-        <h1>Safe Kerala Project - View Labours</h1>
+        <h1>View Labours</h1>
         <div class="actions">
             <a href="addlabour.html" class="add-btn">Add New Labour</a>
             <button class="logout-btn" onclick="logout()">Logout</button>
@@ -82,22 +82,22 @@
     <table>
         <thead>
             <tr>
-                <th>Photo</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Job</th>
+                <th>login id</th>
+                <th>skills</th>
+                <th>phonenumber</th>
+                <th>email</th>
                 <th>Contact</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Example Rows -->
+            {%for i in m%}   
             <tr>
                 <td><img src=""></td>
-                <td>John Doe</td>
-                <td>30</td>
-                <td>Electrician</td>
-                <td>9876543210</td>
+                <td>{{i.login_id}}</td>
+                <td>{{i.skills}}</td>
+                <td>{{i.phonenumber}}</td>
+                <td>{{i.email}}</td>
                 <td class="actions-column">
                     <button class="edit-btn" onclick="editLabour(1)">Edit</button>
                     <button class="delete-btn" onclick="deleteLabour(1)">Delete</button>
@@ -105,15 +105,16 @@
             </tr>
             <tr>
                 <td><img src=""></td>
-                <td>Jane Smith</td>
-                <td>25</td>
-                <td>Plumber</td>
-                <td>8765432109</td>
+                <td>{{i.login_id}}</td>
+                <td>{{i.skills}}</td>
+                <td>{{i.phonenumber}}</td>
+                <td>{{i.email}}</td>
                 <td class="actions-column">
                     <button class="edit-btn" onclick="editLabour(2)">Edit</button>
                     <button class="delete-btn" onclick="deleteLabour(2)">Delete</button>
                 </td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,32 +24,35 @@
         <table id="police-station-table">
             <thead>
                 <tr>
-                    <th>Station ID</th>
-                    <th>Station Name</th>
-                    <th>Location</th>
-                    <th>Contact</th>
+                    <th>stationname</th>
+                    <th>location</th>
+                    <th>contact</th>
                     <th>email</th>
-                    <th>actions</th>
+                    <th>action</th>
+                   
                 </tr>
             </thead>
             <tbody>
-                <!-- Sample row (Data will be dynamically loaded here) -->
+            {%for i in o%}   
+
                 <tr>
-                    <td>1</td>
-                    <td>Central Police Station</td>
-                    <td>Thiruvananthapuram</td>
-                    <td>9876543210</td>
-                    <td>email</td>
+                    
+                    <td>{{i.stationname}}</td>
+                    <td>{{i.location}}</td>
+                    <td>{{i.contact}}</td>
+                    <td>{{i.email}}</td>
+                    
                     <td>
                         <button class="btn-edit" onclick="editRow(this)">Edit</button>
                         <button class="btn-delete" onclick="deleteRow(this)">Delete</button>
                     </td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
         
-        <!-- Add button -->
-        <button class="btn-add" onclick="addPoliceStation()">Add Police Station</button>
+        <a href="addpolicestation">addpolicestation</a>
+    
     </main>
   
 </body>

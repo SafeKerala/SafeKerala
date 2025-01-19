@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +15,9 @@
     
     <table>
         <thead>
+            {%for i in g%}
             <tr>
-                <th>
-            ID</th>
+                <th>id</th>
                 <th>Name</th>
                 <th>Notification</th>
                 <th>Date</th>
@@ -25,21 +25,22 @@
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td></td>
-                <td>2024-12-01</td>
+                <td>{{i.login_id}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.notification}}</td>
+                <td>{{i.date}}</td>
                 
             </tr>
             <tr>
-                <td>2</td>
-                <td>Mary Smith</td>
-                <td>.</td>
-                <td>2024-12-10</td>
+                <td>{{i.login_id}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.notification}}</td>
+                <td>{{i.date}}</td>
                 
                    
                
             </tr>
+            {% endfor %}
             <!-- Dynamic rows will be inserted here -->
         </tbody>
     </table>
